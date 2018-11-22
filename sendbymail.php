@@ -27,11 +27,11 @@ function helloEmail()
     return null;
 }
 
-function sendKitchenSink()
+function sendHelloEmail()
 {
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
-    $request_body = kitchenSink();
+    $request_body = helloEmail();
     
     try {
         $response = $sg->client->mail()->send()->post($request_body);    
